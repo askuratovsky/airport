@@ -29,4 +29,4 @@ See [cover letter][cover]
 
 ---
 [statementlink]: docs/ror_test.pdf
-[cover]: docs/cover
+[cover]: docs/cover.md
