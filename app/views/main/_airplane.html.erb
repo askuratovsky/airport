@@ -1,0 +1,26 @@
+<td class="align-middle grey-text">
+  <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input airplane-select" data-airplane-id=<%= plane.id %> data-state=<%= plane.state %> id="check_<%= plane.id %>" <%= "disabled" unless plane.parked? %>>
+      <label class="custom-control-label" for="check_<%= plane.id %>"><%= plane.id %></label>
+  </div>
+</td>
+<td class="align-middle grey-text">
+  <span class="badge <%= badge_class(plane.state) %>">
+    <%= plane.state %>
+  </span>
+</td>
+<td class="align-middle grey-text"><%= plane.name %></td>
+<td class='p-0 align-middle grey-text'>
+  <table class="table m-0 table-sm table-text-sm">
+  <% plane.state_logs.each do |log| %>
+    <tr>
+      <td class="border-0 width-50">
+        <%= log.created_at.strftime("%T") %>
+      </td>
+      <td class="border-0">
+        <%= log.state %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</td>

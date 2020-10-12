@@ -1,0 +1,16 @@
+@import "bootstrap";
+
+body {
+  padding-top: 4.5rem;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.table-text-sm {
+  font-size: 0.8rem;
+  th, td {
+    padding: 0.2rem;
+  }
+}
