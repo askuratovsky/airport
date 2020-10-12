@@ -5,7 +5,7 @@ migrate: rebuild_images migrate!
 rollback: rebuild_images rollback!
 
 prepare_db:
-	docker-compose run --rm rails db:setup
+	docker-compose run --rm web rails db:setup
 
 rebuild_images:
 	docker-compose build
@@ -29,6 +29,6 @@ migrate!:
 	docker-compose run --rm web rails db:migrate
 
 rollback!:
-	docker-compose run --rm rails db:rollback
+	docker-compose run --rm web rails db:rollback
 
 redo: rollback! migrate!
