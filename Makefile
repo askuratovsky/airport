@@ -1,13 +1,18 @@
-run: rebuild_images prepare_db up
+run: build prepare_db up
 
-migrate: rebuild_images migrate!
+migrate: build migrate!
 
-rollback: rebuild_images rollback!
+rollback: build rollback!
 
-prepare_db:
+prepare_db: create_db setup_db
+
+setup_db:
 	docker-compose run --rm web rails db:setup
 
-rebuild_images:
+create_db:
+	docker-compose run --rm web rails db:create
+
+build:
 	docker-compose build
 
 seed:
