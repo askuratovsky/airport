@@ -1,16 +1,17 @@
-run: build prepare_db up
+run: build start_db sleep prepare_db up
 
 migrate: build migrate!
 
 rollback: build rollback!
 
-prepare_db: create_db setup_db
+prepare_db:
+	docker-compose run web rails db:setup
 
-setup_db:
-	docker-compose run --rm web rails db:setup
+start_db:
+	docker-compose up -d db
 
-create_db:
-	docker-compose run --rm web rails db:create
+sleep:
+	sleep 30
 
 build:
 	docker-compose build
