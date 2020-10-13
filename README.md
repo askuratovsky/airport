@@ -1,6 +1,6 @@
 # Airport departure board app
 
-This app simulates airport departure board. Uses rails under the hood and decoupled microservice to run airplanes.
+This app simulates airport departure board. Uses rails under the hood and decoupled microservice [airhub][airhub] to run airplanes.
 
 ## Run
 
@@ -30,3 +30,4 @@ See [cover letter][cover]
 ---
 [statementlink]: docs/ror_test.pdf
 [cover]: docs/cover.md
+[airhub]: https://github.com/askuratovsky/airhub
